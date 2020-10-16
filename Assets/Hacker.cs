@@ -7,13 +7,12 @@ public class Hacker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShowMainMenu();
+        ShowMainMenu("Hello Ben!");
     }
 
-    void ShowMainMenu()
+    void ShowMainMenu(string greeting)
     {
-        Terminal.ClearScreen();
-        var greeting = "Hello Ben";
+        Terminal.ClearScreen();        
         Terminal.WriteLine(greeting);
         Terminal.WriteLine("What would you like to hack into?");
         Terminal.WriteLine("Press 1 for the local library");
