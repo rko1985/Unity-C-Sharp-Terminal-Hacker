@@ -20,10 +20,10 @@ public class Hacker : MonoBehaviour
         Terminal.WriteLine("Enter your selection:");        
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnUserInput(string input)
     {
-        
+        print(input);
     }
+
 }
 
