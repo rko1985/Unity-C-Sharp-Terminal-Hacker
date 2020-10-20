@@ -7,13 +7,13 @@ public class Hacker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShowMainMenu("Hello Ben!");
+        ShowMainMenu();
+        print("Hello " + "World");
     }
 
-    void ShowMainMenu(string greeting)
+    void ShowMainMenu()
     {
         Terminal.ClearScreen();        
-        Terminal.WriteLine(greeting);
         Terminal.WriteLine("What would you like to hack into?");
         Terminal.WriteLine("Press 1 for the local library");
         Terminal.WriteLine("Press 2 for the police station");
@@ -22,7 +22,18 @@ public class Hacker : MonoBehaviour
 
     void OnUserInput(string input)
     {
-        print(input == "1");
+        if (input == "menu")
+        {
+            ShowMainMenu();
+        }
+        else if ( input == "007")
+        {
+            Terminal.WriteLine("Please select a level Mr Bond!");
+        }
+        else
+        {
+            Terminal.WriteLine("Please choose a valid level");
+        }
     }
 
 }
