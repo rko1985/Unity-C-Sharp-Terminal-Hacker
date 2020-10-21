@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Hacker : MonoBehaviour
 {
+    //Game state
+    int level;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,16 @@ public class Hacker : MonoBehaviour
         {
             ShowMainMenu();
         }
+        else if (input == "1")
+        {
+            level = 1;
+            StartGame();
+        }
+        else if (input == "2")
+        {
+            level = 2;
+            StartGame();
+        }
         else if ( input == "007")
         {
             Terminal.WriteLine("Please select a level Mr Bond!");
@@ -36,5 +50,9 @@ public class Hacker : MonoBehaviour
         }
     }
 
+    void StartGame()
+    {
+        Terminal.WriteLine("You have chosen level " + level);
+    }
 }
 
