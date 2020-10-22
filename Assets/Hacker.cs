@@ -7,16 +7,18 @@ public class Hacker : MonoBehaviour
 {
     //Game state
     int level;
+    enum Screen { MainMenu, Password, Win };
+    Screen currentScreen = Screen.MainMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         ShowMainMenu();
-        print("Hello " + "World");
     }
 
     void ShowMainMenu()
     {
+        currentScreen = Screen.MainMenu;
         Terminal.ClearScreen();        
         Terminal.WriteLine("What would you like to hack into?");
         Terminal.WriteLine("Press 1 for the local library");
@@ -29,7 +31,7 @@ public class Hacker : MonoBehaviour
         if (input == "menu")
         {
             ShowMainMenu();
-        }
+        }  //Todo handle differently depending on screen
         else if (input == "1")
         {
             level = 1;
@@ -52,7 +54,9 @@ public class Hacker : MonoBehaviour
 
     void StartGame()
     {
+        currentScreen = Screen.Password;
         Terminal.WriteLine("You have chosen level " + level);
+        Terminal.WriteLine("Please enter your password: ");
     }
 }
 
